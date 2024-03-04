@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './App.css';
 import { EditButton } from './Buttons';
@@ -26,7 +27,7 @@ export default function GeneralInformationSection(props) {
   };
 
   return (
-    
+
     <section id="general-info">
       <div>
         <h2>General information</h2>
