@@ -7,7 +7,8 @@ export default function PracticalExperienceSection() {
   return (
     <section id = "practical-exp">
       <div>
-        <h2>Company name: </h2>
+        <h2>Practical Experience</h2>
+        <div>Company name: </div>
         <div>Position title: </div>
         <div>Main responsibilities: </div>
         <div>Date: </div>

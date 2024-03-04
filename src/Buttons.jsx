@@ -1,10 +1,11 @@
-export function EditButton() {
+export function EditButton({ onClick }) {
     return (
-        <button>Edit</button>
-    )
+        <button onClick={onClick}>Edit</button>
+    );
 }
-export function SubmitButton() {
+
+export function SubmitButton({ onClick }) {
     return (
-        <button>Submit</button>
-    )
+        <button onClick={onClick}>Submit</button>
+    );
 }
