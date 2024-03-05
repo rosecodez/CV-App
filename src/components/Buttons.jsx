@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function EditButton({ onClick }) {
     return (
         <button onClick={onClick}>Edit</button>

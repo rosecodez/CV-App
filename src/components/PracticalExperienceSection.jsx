@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import './App.css'
-import { EditButton } from './Buttons'
-import { SubmitButton } from './Buttons'
+import '../styles/App.css';
+import { EditButton } from './Buttons.jsx';
+import { SubmitButton } from './Buttons.jsx';
 
-export default function EducationalExperienceSection(props) {
-  const [school, setSchool] = useState(props.school);
-  const [title, setTitle] = useState(props.title);
+
+export default function PracticalExperienceSection(props) {
+  const [companyName, setcompanyName] = useState(props.companyName);
+  const [positionTitle, setPositionTitle] = useState(props.positionTitle);
+  const [responsibilities, setResponsibilities] = useState(props.responsibilities);
   const [startDate, setStartDate] = useState(props.startDate);
   const [endDate, setEndDate] = useState(props.endDate);
 
@@ -15,9 +17,11 @@ export default function EducationalExperienceSection(props) {
 
   // render edit input
   function renderInput(value, handler) {
-    return (
-      <input type="text" value={value} onChange={handler} />
-    );
+    if (isEditing) {
+      return <input type="text" value={value} onChange={handler} />;
+    } else {
+      return <span>{value}</span>;
+    }
   }
 
   const handleStartDateChange = (e) => {
@@ -38,12 +42,13 @@ export default function EducationalExperienceSection(props) {
   const isDateRangeAvailable = startDate && endDate;
 
   return (
-    <section id="general-exp">
+    <section id = "practical-exp">
       <div>
-        <h2>Educational Experience</h2>
-        <div>School Name: {isEditing ? renderInput(school, (e) => setSchool(e.target.value)) : <span>{school}</span>}</div>
-        <div>Title of study: {isEditing ? renderInput(title, (e) => setTitle(e.target.value)) : <span>{title}</span>}</div>
-  
+        <h2>Practical Experience</h2>
+        <div>Company name: {renderInput(companyName, (e) => setcompanyName(e.target.value))}</div>
+        <div>Position title: {renderInput(positionTitle, (e) => setPositionTitle(e.target.value))}</div>
+        <div>Main responsibilities: {renderInput(responsibilities, (e) => setResponsibilities(e.target.value))}</div>
+        
         <div>
           {isDateRangeAvailable && (
             <div>
@@ -60,8 +65,9 @@ export default function EducationalExperienceSection(props) {
             </div>
           )}
         </div>
+
       </div>
-  
+
       <div className='buttons-container'>
         {isEditing ? (
           <SubmitButton onClick={handleSubmit} />
@@ -69,6 +75,7 @@ export default function EducationalExperienceSection(props) {
           <EditButton onClick={() => setIsEditing(true)} />
         )}
       </div>
+
     </section>
-  );
+  )
 }

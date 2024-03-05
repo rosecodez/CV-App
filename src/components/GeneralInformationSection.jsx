@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import './App.css';
-import { EditButton } from './Buttons';
-import { SubmitButton } from './Buttons';
+import '../styles/App.css';
+import { EditButton } from './Buttons.jsx';
+import { SubmitButton } from './Buttons.jsx';
 
 export default function GeneralInformationSection(props) {
   const [name, setName] = useState(props.name);
