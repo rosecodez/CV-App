@@ -38,9 +38,8 @@ export default function EducationalExperienceSection(props) {
   const isDateRangeAvailable = startDate && endDate;
 
   return (
-    <section id="general-exp">
+    <section id="educational-exp">
       <div>
-        <h2>Educational Experience</h2>
         <div>School Name: {isEditing ? renderInput(school, (e) => setSchool(e.target.value)) : <span>{school}</span>}</div>
         <div>Title of study: {isEditing ? renderInput(title, (e) => setTitle(e.target.value)) : <span>{title}</span>}</div>
   
@@ -68,6 +67,7 @@ export default function EducationalExperienceSection(props) {
         ) : (
           <EditButton onClick={() => setIsEditing(true)} />
         )}
+      
       </div>
     </section>
   );

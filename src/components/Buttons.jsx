@@ -10,3 +10,8 @@ export function SubmitButton({ onClick }) {
         <button onClick={onClick}>Submit</button>
     );
 }
+export function CloneSectionButton({ onClick }) {
+    return (
+        <button onClick={onClick}>New one</button>
+    );
+}

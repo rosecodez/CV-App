@@ -4,9 +4,8 @@ import '../styles/App.css';
 import { EditButton } from './Buttons.jsx';
 import { SubmitButton } from './Buttons.jsx';
 
-
 export default function PracticalExperienceSection(props) {
-  const [companyName, setcompanyName] = useState(props.companyName);
+  const [companyName, setCompanyName] = useState(props.companyName);
   const [positionTitle, setPositionTitle] = useState(props.positionTitle);
   const [responsibilities, setResponsibilities] = useState(props.responsibilities);
   const [startDate, setStartDate] = useState(props.startDate);
@@ -44,8 +43,7 @@ export default function PracticalExperienceSection(props) {
   return (
     <section id = "practical-exp">
       <div>
-        <h2>Practical Experience</h2>
-        <div>Company name: {renderInput(companyName, (e) => setcompanyName(e.target.value))}</div>
+        <div>Company name: {renderInput(companyName, (e) => setCompanyName(e.target.value))}</div>
         <div>Position title: {renderInput(positionTitle, (e) => setPositionTitle(e.target.value))}</div>
         <div>Main responsibilities: {renderInput(responsibilities, (e) => setResponsibilities(e.target.value))}</div>
         
